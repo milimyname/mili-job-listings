@@ -175,7 +175,7 @@ main {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 41rem) {
+@media only screen and (max-width: 410px) {
   header {
     padding: 2rem 0;
     background-image: url("./assets/bg-header-mobile.svg");
