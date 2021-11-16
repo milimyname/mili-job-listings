@@ -1,13 +1,262 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+
+:root {
+  --color-text: #2b3939;
+  --color-green: #5ca5a5;
+  --color-green-light: #effafa;
+  --color-white: #ffffff;
+  --color-green-pond: #7c8f8f;
+
+  --box-shadow: rgba(0, 0, 0, 0.05);
+
+  --bk-point-mobile: 40rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-green-light);
+}
+
+header {
+  background-color: var(--color-green);
+  background-image: url("./assets/bg-header-desktop.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 16rem;
+  padding: 7rem 0;
+}
+
+main {
+  padding: 7.6rem 12.8rem;
+  display: grid;
+  row-gap: 2.4rem;
+}
+
+.job-opening {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+  padding: 3.2rem 4rem;
+  border-left: 5px solid transparent;
+  background: var(--color-white);
+  border-radius: 5px;
+  box-shadow: 0 1rem 1rem var(--box-shadow);
+}
+
+.job-info {
+  flex: 1;
+  display: grid;
+  row-gap: 8px;
+}
+
+.job-company {
+  display: flex;
+  align-items: center;
+}
+
+.job-new,
+.job-featured {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-white);
+  padding: 6px 8px 4px 8px;
+  border-radius: 10rem;
+}
+.job-new {
+  background: var(--color-green);
+  margin-right: 1rem;
+}
+.job-featured {
+  background: var(--color-text);
+}
+
+.job-stack {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.btn-click {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-green);
+  padding: 8px;
+  background: var(--color-green-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-clicked,
+.btn-click:hover,
+.btn-click:focus {
+  color: var(--color-white);
+  background: var(--color-green);
+}
+
+.tags-tab {
+  max-width: calc(100vw - 25rem);
+  display: flex;
+  gap: 1rem;
+  background: var(--color-white);
+  border-radius: 5px;
+  box-shadow: 0 1rem 1rem var(--box-shadow);
+  padding: 2rem 4rem;
+  margin: 0 auto;
+}
+
+.btn-tag {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+
+.span-tag {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-green);
+  background: var(--color-green-light);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 1rem;
+}
+
+.icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-green);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 1rem;
+}
+
+.btn-tag:hover .icon-bg,
+.btn-tag:focus .icon-bg {
+  background: var(--color-text);
+}
+
+.btn-clear {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-green);
+  border: none;
+  cursor: pointer;
+  background: none;
+  margin-left: auto;
+}
+
+.btn-clear:hover,
+.btn-clear:focus {
+  border-bottom: 1px solid var(--color-green);
+}
+
+.border-left {
+  border-left: 5px solid var(--color-green);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 41rem) {
+  header {
+    padding: 2rem 0;
+    background-image: url("./assets/bg-header-mobile.svg");
+  }
+  main {
+    padding: 5.6rem 2.4rem 3.2rem;
+    display: grid;
+    row-gap: 4rem;
+    /* overflow: hidden; */
+  }
+
+  .job-opening {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.6rem;
+    padding: 3.2rem 2.4rem 1.4rem;
+    position: relative;
+  }
+
+  .job-logo {
+    position: absolute;
+    top: -2.4rem;
+    left: 2.4rem;
+  }
+
+  .job-logo img {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .job-stack {
+    display: flex;
+    flex-flow: wrap;
+    gap: 1.6rem;
+    padding-top: 2rem;
+    border-top: 1px solid #b7c4c4;
+  }
+
+  .btn-click {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-green);
+    padding: 8px;
+    background: var(--color-green-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .tags-tab {
+    max-width: calc(100vw - 4.8rem);
+    display: flex;
+    flex-flow: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .btn-clear {
+    color: #7c8f8f;
+    position: absolute;
+    top: 8vw;
+    right: 7vw;
+  }
+}
+
+/* Typography */
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--color-green);
+  margin-right: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  color: var(--color-green-pond);
 }
